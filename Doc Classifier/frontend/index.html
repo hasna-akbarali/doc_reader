@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Receipt/Credit Note Classifier</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Receipt / Credit Note Classifier</h1>
+      <p class="muted">Upload PDFs → Groq analysis → download folders as ZIP.</p>
+    </div>
+
+    <div class="card">
+      <label class="lbl">Select PDFs</label>
+      <input id="pdfs" type="file" accept="application/pdf" multiple />
+      <div id="fileInfo" class="muted">No files selected.</div>
+    
+      <div class="row">
+        <button id="startBtn">Start</button>
+        <button id="cancelBtn" disabled>Cancel</button>
+        <span class="pill" id="statusPill">idle</span>
+      </div>
+    
+      <div class="progressbar"><div id="bar"></div></div>
+      <div id="progressText" class="muted">Waiting…</div>
+    </div>
+
+    <div class="card">
+      <div class="row space">
+        <h2>Downloads</h2>
+        <span class="muted">Available when job finishes</span>
+      </div>
+      <div id="downloads" class="downloads"></div>
+    </div>
+
+    <div class="card">
+      <div class="row space">
+        <h2>Log</h2>
+        <button id="clearLogBtn" class="ghost">Clear</button>
+      </div>
+      <pre id="log" class="log"></pre>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
